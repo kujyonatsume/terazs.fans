@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>terazs.fans | 網站施工中</title>
+    <style>
+      :root {
+        --bg: #0b1220;
+        --panel: #111a2f;
+        --panel-border: #facc15;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --caution: #facc15;
+        --danger: #111827;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 20% 10%, #1e293b 0%, transparent 40%),
+          radial-gradient(circle at 80% 85%, #1f2937 0%, transparent 38%),
+          var(--bg);
+        padding: 24px;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 18px;
+        background: repeating-linear-gradient(
+          -45deg,
+          var(--caution),
+          var(--caution) 18px,
+          var(--danger) 18px,
+          var(--danger) 36px
+        );
+        box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+      }
+
+      .card {
+        width: min(680px, 100%);
+        background: linear-gradient(180deg, #1a2540 0%, var(--panel) 100%);
+        border: 2px solid rgba(250, 204, 21, 0.55);
+        border-radius: 18px;
+        padding: 36px;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(
+          120deg,
+          transparent 0%,
+          rgba(250, 204, 21, 0.08) 40%,
+          transparent 75%
+        );
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(250, 204, 21, 0.15);
+        color: var(--caution);
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        font-size: 13px;
+      }
+
+      h1 {
+        margin: 18px 0 12px;
+        font-size: clamp(2rem, 3.6vw, 2.8rem);
+        line-height: 1.15;
+      }
+
+      p {
+        margin: 0;
+        font-size: 1rem;
+        color: var(--muted);
+      }
+
+      .progress {
+        margin-top: 26px;
+      }
+
+      .progress-label {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.92rem;
+        margin-bottom: 10px;
+        color: #d1d5db;
+      }
+
+      .track {
+        height: 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+        border: 1px solid rgba(250, 204, 21, 0.25);
+      }
+
+      .bar {
+        width: 65%;
+        height: 100%;
+        border-radius: inherit;
+        background: repeating-linear-gradient(
+          -45deg,
+          #facc15,
+          #facc15 12px,
+          #f59e0b 12px,
+          #f59e0b 24px
+        );
+        animation: move 1.2s linear infinite;
+      }
+
+      .meta {
+        margin-top: 22px;
+        display: grid;
+        gap: 8px;
+        color: #cbd5e1;
+        font-size: 0.95rem;
+      }
+
+      .actions {
+        margin-top: 28px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        border: 0;
+        border-radius: 10px;
+        padding: 11px 16px;
+        font-size: 0.95rem;
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      .btn-primary {
+        background: var(--caution);
+        color: #1f2937;
+        font-weight: 700;
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.08);
+        color: #e5e7eb;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        opacity: 0.9;
+      }
+
+      @keyframes move {
+        from {
+          background-position: 0 0;
+        }
+        to {
+          background-position: 40px 0;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .card {
+          padding: 26px 20px;
+        }
+
+        .badge {
+          font-size: 12px;
+        }
+
+        .actions {
+          flex-direction: column;
+        }
+
+        .btn {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card" role="main">
+      <span class="badge">⚠ UNDER CONSTRUCTION</span>
+      <h1>網站施工中</h1>
+      <p>
+        我們正在升級內容與體驗，請稍後再回來看看。感謝你的耐心等待。
+      </p>
+
+      <section class="progress" aria-label="施工進度">
+        <div class="progress-label">
+          <span>施工進度</span>
+          <span>65%</span>
+        </div>
+        <div class="track" aria-hidden="true">
+          <div class="bar"></div>
+        </div>
+      </section>
+
+      <div class="meta">
+        <span>預計完成：近期內更新</span>
+        <span>若有合作需求：contact@terazs.fans</span>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:contact@terazs.fans">聯絡我們</a>
+        <button class="btn btn-secondary" type="button" onclick="window.location.reload()">
+          重新整理
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
